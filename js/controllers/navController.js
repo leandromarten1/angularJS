@@ -1,6 +1,9 @@
 angular
-  .module('ToDoList', [])
+  .module('ToDoList')
   .controller('navController', ($scope, todoFactory) => {
-    $scope.date = new Date();
-    $scope.unfinished = todoFactory.getTodos();
+    $scope.todos = todoFactory.data.count;
+    $scope.today = moment(todoFactory.data.timestamp).format('LL');
+    $scope.getTotalTodos = function () {
+      return $scope.todos.length;
+    };
   });

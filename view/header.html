@@ -1,8 +1,13 @@
-<!-- <div ng-controller="navController"> -->
-    <h1>Todo list</h1>
+<div ng-controller="navController">
     <!-- Fazem a mesma coisa, porem com a expression({{}}) pode dar ruim na renderização -->
     <!-- <p ng-bind='message'></p> -->
-    <p>{{message}}</p>
-    <p>{{date}}</p>
-    <p>Unfinished Todos: {{todos}}</p>
-<!-- </div> -->
+    <nav class="navbar navbar-light bg-light d-flex align-items-center mb-4">
+        <div class="container-fluid">
+          <a class="navbar-brand">Todo List</a>
+          <p class="navbar-brand m-0">{{today}}</p>
+          <button type="button" class="btn btn-primary" ng-click="updateUnfinishedCount()">
+            Unfinished Todos <span class="badge bg-secondary">{{getTotalTodos()}}</span>
+        </button>
+        </div>
+      </nav>
+</div>
