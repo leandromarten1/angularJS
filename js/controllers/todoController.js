@@ -31,18 +31,22 @@
 
     vm.message = 'My app todo list';
     vm.todos = todoFactory.getTodos();
-    vm.add = (todo) => {
+    vm.add = add;
+    vm.removeTodo = removeTodo;
+    vm.removeDone = removeDone;
+
+    function add(todo) {
       todo.done = false;
       todoFactory.addTodo(angular.copy(todo));
       delete vm.todo;
-    };
+    }
 
-    vm.removeTodo = (todo) => {
+    function removeTodo(todo) {
       vm.todos = todoFactory.removeThisTodo(todo);
-    };
+    }
 
-    vm.removeDone = (todos) => {
+    function removeDone(todos) {
       vm.todos = todoFactory.removeAllTodosDone(todos);
-    };
+    }
   }
 })();
