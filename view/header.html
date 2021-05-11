@@ -1,13 +1,23 @@
 <div ng-controller="navController">
     <!-- Fazem a mesma coisa, porem com a expression({{}}) pode dar ruim na renderização -->
     <!-- <p ng-bind='message'></p> -->
-    <nav class="navbar navbar-light bg-light d-flex align-items-center mb-4">
+    <header>
+      <nav class="navbar navbar-light bg-light d-flex align-items-center mb-4">
         <div class="container-fluid">
           <a class="navbar-brand">Todo List</a>
-          <p class="navbar-brand m-0">{{today}}</p>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" ui-sref="app">Todo List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" ui-sref="about">About</a>
+            </li>
+          </ul>
+          <p class="m-0">{{today}}</p>
           <button type="button" class="btn btn-primary" ng-click="updateUnfinishedCount()">
             Unfinished Todos <span class="badge bg-secondary">{{getTotalTodos()}}</span>
-        </button>
+          </button>
         </div>
       </nav>
+    </header>
 </div>
