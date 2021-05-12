@@ -24,12 +24,13 @@
 
   angular.module('ToDoList').controller('todoController', todoController);
 
-  todoController.$inject = ['todoFactory'];
+  todoController.$inject = ['$scope', 'todoFactory'];
 
-  function todoController(todoFactory) {
+  function todoController($scope, todoFactory) {
+    // function todoController(todoFactory, todoList) {
+    // injetar todoList como dependência
     var vm = this;
 
-    vm.message = 'My app todo list';
     vm.todos = todoFactory.getTodos();
     vm.add = add;
     vm.removeTodo = removeTodo;
@@ -38,7 +39,7 @@
     function add(todo) {
       todo.done = false;
       todoFactory.addTodo(angular.copy(todo));
-      delete vm.todo;
+      delete $scope.todo;
     }
 
     function removeTodo(todo) {

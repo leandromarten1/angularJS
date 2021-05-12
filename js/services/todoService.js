@@ -1,34 +1,40 @@
-angular.module('ToDoList').factory('todoFactory', () => {
-  let todos = [];
+(function () {
+  'use strict';
 
-  return {
-    getTodos: _getTodos,
-    data: { count: todos, timestamp: new Date() },
-    addTodo: _addTodo,
-    removeThisTodo: _removeThisTodo,
-    removeAllTodosDone: _removeAllTodosDone,
-  };
+  angular.module('ToDoList').factory('todoFactory', todoFactory);
 
-  function _getTodos() {
-    return todos;
-  }
+  function todoFactory() {
+    let todos = [];
 
-  function _addTodo(todo) {
-    todo.done = false;
-    todos.push(todo);
-  }
+    return {
+      getTodos,
+      data: { count: todos, timestamp: new Date() },
+      addTodo: _addTodo,
+      removeThisTodo: _removeThisTodo,
+      removeAllTodosDone: _removeAllTodosDone,
+    };
 
-  function _removeThisTodo(todo) {
-    todos.splice(todos.indexOf(todo), 1);
-    return todos;
-  }
-
-  function _removeAllTodosDone() {
-    for (let i = 0; i <= todos.length; i += 1) {
-      if (todos[i].done) {
-        todos.splice(i, 1);
-      }
+    function getTodos() {
+      return todos;
     }
-    return todos;
+
+    function _addTodo(todo) {
+      todo.done = false;
+      todos.push(todo);
+    }
+
+    function _removeThisTodo(todo) {
+      todos.splice(todos.indexOf(todo), 1);
+      return todos;
+    }
+
+    function _removeAllTodosDone() {
+      for (let i = 0; i <= todos.length; i += 1) {
+        if (todos[i].done) {
+          todos.splice(i, 1);
+        }
+      }
+      return todos;
+    }
   }
-});
+})();

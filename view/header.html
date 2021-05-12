@@ -1,4 +1,4 @@
-<div ng-controller="navController">
+<div ng-controller="navController as nav">
     <!-- Fazem a mesma coisa, porem com a expression({{}}) pode dar ruim na renderização -->
     <!-- <p ng-bind='message'></p> -->
     <header>
@@ -13,9 +13,9 @@
               <a class="nav-link" ui-sref="about">About</a>
             </li>
           </ul>
-          <p class="m-0">{{today}}</p>
+          <p class="m-0">{{nav.today}}</p>
           <button type="button" class="btn btn-primary" ng-click="updateUnfinishedCount()">
-            Unfinished Todos <span class="badge bg-secondary">{{getTotalTodos()}}</span>
+            Unfinished Todos <span class="badge bg-secondary">{{nav.getTotalTodos()}}</span>
           </button>
         </div>
       </nav>

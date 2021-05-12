@@ -5,6 +5,11 @@ angular.module('ToDoList').config(function ($stateProvider) {
     name: 'app',
     url: '/',
     templateUrl: 'view/todo.html',
+    // resolve: {
+    //   todoList: function (todoFactory) {
+    //     return todoFactory.getTodos();
+    //   },
+    // },
   };
 
   let aboutState = {
