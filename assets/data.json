@@ -1,0 +1,14 @@
+[
+    {
+        "name": "tomar banho gelado",
+        "done": false
+    },
+    {
+        "name": "aprender Golang",
+        "done": false
+    },
+    {
+        "name": "Ler Clean Code",
+        "done": false
+    },
+]

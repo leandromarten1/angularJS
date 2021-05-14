@@ -1,0 +1,9 @@
+<section class="d-flex flex-wrap">
+    <div class="card m-2" style="width: 18rem;" ng-repeat="pokemon in vm.pokemons">
+        <img class="card-img-top" src="{{pokemon.image}}" alt="{{pokemon.name}}">
+        <div class="card-body">
+          <h5 class="card-title">{{pokemon.name}}</h5>
+          <a ui-sref="app.pokemon.detail({pokeId: pokemon.id})" class="btn btn-primary">Detalhes</a>
+        </div>
+      </div>
+</section>

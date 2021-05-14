@@ -1,16 +1,19 @@
-<div ng-controller="navController as nav">
+<div>
     <!-- Fazem a mesma coisa, porem com a expression({{}}) pode dar ruim na renderização -->
     <!-- <p ng-bind='message'></p> -->
     <header>
       <nav class="navbar navbar-light bg-light d-flex align-items-center mb-4">
         <div class="container-fluid">
-          <a class="navbar-brand">Todo List</a>
+          <a class="navbar-brand">TODO LIST</a>
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" ui-sref="app">Todo List</a>
+              <a class="nav-link" ui-sref="app.todo">Todo's</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" ui-sref="about">About</a>
+              <a class="nav-link" ui-sref="app.pokemon">Pokemon</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" ui-sref="app.about">About</a>
             </li>
           </ul>
           <p class="m-0">{{nav.today}}</p>

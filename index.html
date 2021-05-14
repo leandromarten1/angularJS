@@ -11,13 +11,17 @@
     <script src="js/todo.js"></script>
     <script src="js/controllers/navController.js"></script>
     <script src="js/controllers/todoController.js"></script>
+    <script src="js/controllers/pokeController.js"></script>
+    <script src="js/controllers/detailsController.js"></script>
     <script src="js/services/todoService.js"></script>
+    <script src="js/services/pokeService.js"></script>
+    <script src="js/config/todoConfig.js"></script>
     <script src="lib/moment/moment.js"></script>
     <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
     <title>Todo List</title>
 </head>
-<body ng-controller="todoController as vm" class="p-3">
-   <div ng-include="'view/header.html'" class="text-center" ></div>
+<body class="p-3">
+   <div ui-view="header" class="text-center" ></div>
    <div ui-view></div>
 </body>
 </html>
