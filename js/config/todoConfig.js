@@ -47,7 +47,7 @@
         },
       })
       .state('app.pokemon.detail', {
-        url: '/pokemon/detail/:pokeId',
+        url: '/detail/:pokeId',
         views: {
           '@': {
             templateUrl: 'view/pokeDetail.html',

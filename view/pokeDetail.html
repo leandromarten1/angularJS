@@ -1,8 +1,8 @@
 <section>
     <div class="card d-flex flex-row">
-        <img src="{{vm.pokemon.image}}" alt="Card image cap" height="400px" width="400px">
+        <img src="{{vm.pokemon.image}}" alt="{{vm.pokemon.name}}" height="400px" width="400px">
         <div class="card-body">
-            <h4 class="card-title">{{vm.pokemon.name | uppercase}}</h4>
+            <h4 class="card-title">{{vm.pokemon.name | capitalize}}</h4>
             <p>Weight: {{vm.pokemon.weight}}</p>
             <p>HP: {{vm.pokemon.hp}}</p>
             <p>Attack: {{vm.pokemon.attack}}</p>
