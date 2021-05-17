@@ -1,8 +1,13 @@
-<section class="d-flex flex-wrap">
-    <div class="card m-2" style="width: 18rem;" ng-repeat="pokemon in vm.pokemons">
+<div class="mb-5">
+  <input type="text" class="form-control" ng-model="pokeSearch" placeholder="Digite o nome do pokemon que você quer ver..." />
+  <p class="text-danger">O app retorna somente os pokemons da primeira geração</p>
+</div>
+<section class="d-flex flex-wrap m-auto">
+    <div class="card m-2" style="width: 18rem;" ng-repeat="pokemon in vm.pokemons | filter:{name: pokeSearch}">
         <img class="card-img-top" src="{{pokemon.image}}" alt="{{pokemon.name}}">
         <div class="card-body">
-          <h5 class="card-title">{{pokemon.name}}</h5>
+          <h5 class="text-muted">#{{pokemon.id}}<h5>
+          <h4 class="card-title">{{pokemon.name | capitalize}}</h4>
           <a ui-sref="app.pokemon.detail({pokeId: pokemon.id})" class="btn btn-primary">Detalhes</a>
         </div>
       </div>
